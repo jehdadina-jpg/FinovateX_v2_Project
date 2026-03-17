@@ -153,41 +153,32 @@ const GlowText = ({ text, color = "#ff2244" }) => (
 /* ═══════════════════ DATA ═══════════════════ */
 
 const EVENTS = [
-  { id: "01", icon: "⚡", title: "FinTech Hackathon", time: "Day 1–2 · 24 Hours", tags: ["Fraud & Risk", "Digital Lending", "UPI", "RegTech", "FinInclusion"], desc: "Build a working FinTech prototype over 24 intense hours. Mentor checkpoints, overnight development, live final presentations.", accentColor: "#ff2244" },
-  { id: "02", icon: "📈", title: "Live Trading Sim", time: "Day 1 · 2:00–4:00 PM", tags: ["Individual", "Stocks", "Portfolio"], desc: "Trade with virtual capital in a 2-hour window. Real-time leaderboard. Winners by highest risk-adjusted returns.", accentColor: "#00cc44" },
-  { id: "03", icon: "🔐", title: "FinTech Escape Room", time: "Day 1 · 5:00–6:30 PM", tags: ["Teams", "Cyber", "Crisis Sim"], desc: '"Digital Bank Under Cyber Attack — 60 Minutes to Secure the System." Staged fraud crises, compliance quizzes, market crashes.', accentColor: "#ff2244" },
-  { id: "04", icon: "🔍", title: "Fraud Detection", time: "Day 2 · 11:00 AM–1:00 PM", tags: ["Data Analysis", "AML", "Risk"], desc: "Analyse a simulated transaction dataset. Identify fraud patterns, propose detection rules, present your risk framework.", accentColor: "#00cc44" },
+  { id: "01", icon: "📈", title: "Live Algorithmic Trading", time: "Day 1 · 9:00 AM–1:00 PM", tags: ["Individual", "Algorithms", "Portfolio"], desc: "Write trading algorithms in a 4-hour window. Code will be tested the following week under conditions like war and current events. Winners by highest risk-adjusted returns.", accentColor: "#00cc44" },
+  { id: "02", icon: "🔍", title: "Fraud Detection", time: "Day 1 · 2:30 PM–4:00 PM", tags: ["Data Analysis", "AML", "Risk"], desc: "Analyse a simulated transaction dataset. Identify fraud patterns, propose detection rules, present your risk framework.", accentColor: "#00cc44" },
 ];
 
 const DAY1 = [
-  { time: "7:30 AM", title: "Registration & Breakfast", type: "" },
-  { time: "9:00 AM", title: "Opening Ceremony & Problem Statement Reveal", type: "" },
-  { time: "10:30 AM", title: "🚀 Hackathon Begins", type: "HACKATHON" },
-  { time: "2:00 PM", title: "Live Trading Simulation", type: "TRADING" },
-  { time: "5:00 PM", title: "FinTech Escape Room", type: "ESCAPE" },
-  { time: "7:30 PM", title: "Dinner Break", type: "" },
-  { time: "8:30 PM", title: "Development Phase III", type: "HACKATHON" },
-  { time: "9:00 PM", title: "Mentor Checkpoint Round", type: "" },
-  { time: "11:30 PM", title: "🌙 Midnight Snacks", type: "" },
-  { time: "12:00 AM", title: "Overnight Development (Supervised)", type: "HACKATHON" },
+  { time: "8:00 AM", title: "Registrations", type: "" },
+  { time: "9:00 AM", title: "🚀 Live Algo Trading Challenge Begins", type: "TRADING" },
+  { time: "1:00 PM", title: "Algo Submissions & Lunch Break", type: "" },
+  { time: "2:30 PM", title: "Fraud Detection Challenge", type: "FRAUD" },
+  { time: "4:00 PM", title: "🎉 Closing Ceremony", type: "" },
 ];
-const DAY2 = [
-  { time: "7:30 AM", title: "Breakfast", type: "" },
-  { time: "8:30 AM", title: "Final Development & Debugging", type: "HACKATHON" },
-  { time: "11:00 AM", title: "Fraud Detection Challenge", type: "FRAUD" },
-  { time: "12:30 PM", title: "Lunch", type: "" },
-  { time: "1:30 PM", title: "🏆 Final Presentations — Top Teams", type: "HACKATHON" },
-  { time: "4:00 PM", title: "🎉 Award Ceremony & Closing", type: "" },
-];
+const DAY2 = [];
 
 const TYPE_C = { HACKATHON: "#ff2244", TRADING: "#00cc44", ESCAPE: "#ff7700", FRAUD: "#aa44ff" };
 
-const CRITERIA = [
-  { name: "Innovation", pct: 25, color: "#ff2244" },
-  { name: "Technical Depth", pct: 25, color: "#ff2244" },
-  { name: "Feasibility", pct: 20, color: "#00cc44" },
-  { name: "Business Model", pct: 15, color: "#00cc44" },
-  { name: "Risk & Regulatory Awareness", pct: 15, color: "#00cc44" },
+const CRITERIA_ALGO = [
+  { name: "Risk-Adjusted Returns (Sharpe Ratio)", pct: 40, color: "#00cc44" },
+  { name: "Absolute Profitability", pct: 30, color: "#00cc44" },
+  { name: "Drawdown Management", pct: 20, color: "#00cc44" },
+  { name: "Code Efficiency & Robustness", pct: 10, color: "#00cc44" },
+];
+
+const CRITERIA_FRAUD = [
+  { name: "Number of Anomalies Identified", pct: 50, color: "#ff2244" },
+  { name: "Accuracy (Fewest False Positives)", pct: 30, color: "#ff2244" },
+  { name: "Systematic Rule Creation", pct: 20, color: "#ff2244" },
 ];
 
 /* ═══════════════════ APP ═══════════════════ */
@@ -266,12 +257,14 @@ export default function App() {
           </h1>
           <div style={{ fontFamily: "'Orbitron',monospace", fontSize: "clamp(1rem,2.5vw,1.6rem)", fontWeight: 400, color: "rgba(255,255,255,0.4)", letterSpacing: "6px", animation: "fadeUp 0.8s 0.5s both", marginTop: 6 }}>2026</div>
 
+          <p style={{ fontFamily: "'DM Mono',monospace", fontSize: "clamp(0.85rem,2vw,1.1rem)", color: "var(--dim)", maxWidth: 640, margin: "24px auto 36px", lineHeight: 1.6, animation: "fadeUp 0.8s 0.5s both" }}>
+          </p>
           <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "clamp(0.65rem,1.5vw,0.85rem)", letterSpacing: "3px", textTransform: "uppercase", color: "var(--dim)", margin: "20px 0 8px", animation: "fadeUp 0.8s 0.7s both" }}>
             <GlitchText text="WHERE FINANCE MEETS CODE" />
           </div>
           <div style={{ width: 80, height: 1, background: "linear-gradient(90deg, #ff2244, #00cc44)", margin: "16px auto", animation: "fadeUp 0.8s 0.8s both" }} />
           <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.76rem", color: "var(--dim)", letterSpacing: "2px", animation: "fadeUp 0.8s 0.9s both" }}>
-            <span style={{ color: "#ff2244" }}>28–29 MARCH 2026</span> &nbsp;·&nbsp; <span style={{ color: "#00cc44" }}>24-HOUR FINTECH SUMMIT</span>
+            <span style={{ color: "#ff2244" }}>28th MARCH 2026</span>
           </div>
 
           <div style={{ display: "flex", gap: 16, justifyContent: "center", margin: "36px 0 60px", flexWrap: "wrap", animation: "fadeUp 0.8s 1.1s both" }}>
@@ -293,7 +286,7 @@ export default function App() {
       </section>
 
       {/* ─── MARQUEE ─── */}
-      <Marquee items={["FinTech Hackathon", "Live Trading Simulation", "Escape Room", "Fraud Detection", "₹1,00,000 Prize Pool", "28–29 March 2026", "Finance & Technology Club", "24-Hour Innovation Summit"]} />
+      <Marquee items={["Live Algorithmic Trading", "Fraud Detection", "₹25,000 Prize Pool", "28 March 2026", "Finance & Technology Club", "7-Hour Innovation Event"]} />
 
       {/* ─── COUNTDOWN ─── */}
       <section style={{ background: "var(--bg2)", padding: "60px clamp(20px,5vw,60px)", borderBottom: "1px solid rgba(255,34,68,0.1)" }}>
@@ -312,12 +305,12 @@ export default function App() {
             <div>
               <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "5px", textTransform: "uppercase", color: "#00cc44", marginBottom: 8 }}>TOTAL PRIZE POOL</div>
               <div style={{ fontFamily: "'Orbitron',monospace", fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, color: "#00cc44", lineHeight: 1, textShadow: "0 0 40px rgba(0,204,68,0.4)" }}>
-                <CountUp end={100000} prefix="₹" />
+                <CountUp end={25000} prefix="₹" />
               </div>
             </div>
           </SR>
           <div style={{ display: "flex", gap: "clamp(20px,4vw,56px)", flexWrap: "wrap", justifyContent: "center" }}>
-            {[["4", "Events", "#ff2244"], ["24h", "Hackathon", "#00cc44"], ["100+", "Participants", "#ff2244"], ["∞", "Possibilities", "#00cc44"]].map(([n, l, c]) => (
+            {[["2", "Events", "#ff2244"], ["7h", "Dual-Event", "#00cc44"], ["100+", "Participants", "#ff2244"], ["∞", "Possibilities", "#00cc44"]].map(([n, l, c]) => (
               <SR key={l} delay={0.1}>
                 <div style={{ textAlign: "center" }}>
                   <div style={{ fontFamily: "'Orbitron',monospace", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 700, color: c, textShadow: `0 0 20px ${c}60` }}>{n}</div>
@@ -334,13 +327,13 @@ export default function App() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <SR>
             <div style={{ marginBottom: 56 }}>
-              <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "5px", textTransform: "uppercase", color: "#ff2244", marginBottom: 12 }}>WHAT'S HAPPENING</div>
+              <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "5px", textTransform: "uppercase", color: "#ff2244", marginBottom: 12 }}>2 EVENTS</div>
               <h2 style={{ fontFamily: "'Orbitron',monospace", fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 700, lineHeight: 1.1 }}>
-                <SplitText text="Four Arenas" /> <br />
+                <SplitText text="Two Arenas" /> <br />
                 <GreenShiny text="of Innovation" />
               </h2>
               <div style={{ width: 80, height: 2, background: "linear-gradient(90deg,#ff2244,#00cc44)", margin: "20px 0" }} />
-              <p style={{ color: "var(--dim)", fontSize: "0.88rem", lineHeight: 1.8, maxWidth: 500 }}>A 24-hour summit spanning coding, trading, cybersecurity, and data analysis — through the lens of modern finance.</p>
+              <p style={{ color: "var(--dim)", fontSize: "0.88rem", lineHeight: 1.8, maxWidth: 500 }}>A 7-hour event spanning algorithmic trading and financial fraud detection — through the lens of modern finance.</p>
             </div>
           </SR>
 
@@ -379,7 +372,7 @@ export default function App() {
           </SR>
           <SR delay={0.1}>
             <div style={{ display: "flex", borderBottom: "1px solid rgba(255,34,68,0.15)", marginBottom: 36 }}>
-              {["Day 1 — Saturday", "Day 2 — Sunday"].map((d, i) => (
+              {["Saturday, 28th March"].map((d, i) => (
                 <button key={d} onClick={() => setActiveDay(i)} style={{ padding: "12px 26px", fontFamily: "'DM Mono',monospace", fontSize: "0.7rem", letterSpacing: "2px", textTransform: "uppercase", background: "none", border: "none", borderBottom: activeDay === i ? "2px solid #ff2244" : "2px solid transparent", color: activeDay === i ? "#ff2244" : "var(--dim)", marginBottom: -1, cursor: "none", transition: "color 0.2s" }}>{d}</button>
               ))}
             </div>
@@ -407,10 +400,12 @@ export default function App() {
             </div>
           </SR>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 60 }}>
+            {/* ALGO TRADING CRITERIA */}
             <div ref={barsRef}>
               <SR delay={0.1}>
+                <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "3px", textTransform: "uppercase", color: "#00cc44", marginBottom: 18 }}>ALGORITHMIC TRADING</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-                  {CRITERIA.map((c, i) => (
+                  {CRITERIA_ALGO.map((c, i) => (
                     <div key={c.name}>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 7 }}>
                         <span style={{ fontSize: "0.83rem" }}>{c.name}</span>
@@ -424,15 +419,24 @@ export default function App() {
                 </div>
               </SR>
             </div>
+
+            {/* FRAUD DETECTION CRITERIA */}
             <SR delay={0.2}>
               <div>
-                <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "3px", textTransform: "uppercase", color: "#ff2244", marginBottom: 18 }}>MANDATORY DELIVERABLES</div>
-                {[["💻", "Working Prototype", "Functional demo"], ["🗺️", "System Architecture", "Visual of your tech stack"], ["📊", "Business Model & Revenue Plan", "Viability & monetization"], ["⚖️", "Risk & Compliance Framework", "Regulatory considerations"]].map(([icon, title, sub]) => (
-                  <TiltCard key={title} style={{ display: "flex", gap: 14, padding: "15px 18px", background: "var(--bg2)", border: "1px solid rgba(255,34,68,0.12)", marginBottom: 10, alignItems: "center" }}>
-                    <span style={{ fontSize: "1.2rem" }}>{icon}</span>
-                    <div><div style={{ fontSize: "0.83rem", fontWeight: 500 }}>{title}</div><div style={{ fontSize: "0.72rem", color: "var(--dim)", marginTop: 2 }}>{sub}</div></div>
-                  </TiltCard>
-                ))}
+                <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "3px", textTransform: "uppercase", color: "#ff2244", marginBottom: 18 }}>FRAUD DETECTION</div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+                  {CRITERIA_FRAUD.map((c, i) => (
+                    <div key={c.name}>
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 7 }}>
+                        <span style={{ fontSize: "0.83rem" }}>{c.name}</span>
+                        <span style={{ fontFamily: "'Orbitron',monospace", fontSize: "0.72rem", color: c.color }}>{c.pct}%</span>
+                      </div>
+                      <div style={{ height: 2, background: "rgba(255,255,255,0.07)", borderRadius: 1, overflow: "hidden" }}>
+                        <div style={{ height: "100%", width: barsOn ? `${c.pct}%` : 0, background: `linear-gradient(90deg, ${c.color}, ${c.color}88)`, transition: `width 1.3s ${i * 0.12}s cubic-bezier(0.4,0,0.2,1)`, borderRadius: 1, boxShadow: `0 0 8px ${c.color}60` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </SR>
           </div>
@@ -451,11 +455,11 @@ export default function App() {
               Ready to <br /><GlitchText text="INNOVATE?" />
             </h2>
             <div style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.78rem", letterSpacing: "3px", color: "var(--dim)", textTransform: "uppercase", margin: "20px 0 32px" }}>
-              <TypeWriter text="28–29 March 2026  ·  Limited Spots Available" speed={38} />
+              <TypeWriter text="28 March 2026  ·  Limited Spots Available" speed={38} />
             </div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 16, border: "1px solid rgba(0,204,68,0.25)", padding: "14px 30px", marginBottom: 44, boxShadow: "0 0 30px rgba(0,204,68,0.08)" }}>
               <span style={{ fontFamily: "'DM Mono',monospace", fontSize: "0.68rem", letterSpacing: "2px", textTransform: "uppercase", color: "var(--dim)" }}>Prize Pool</span>
-              <span style={{ fontFamily: "'Orbitron',monospace", fontSize: "2rem", fontWeight: 900, color: "#00cc44", textShadow: "0 0 30px rgba(0,204,68,0.5)" }}>₹1,00,000</span>
+              <span style={{ fontFamily: "'Orbitron',monospace", fontSize: "2rem", fontWeight: 900, color: "#00cc44", textShadow: "0 0 30px rgba(0,204,68,0.5)" }}>₹25,000</span>
             </div>
             <br />
             <PulseRing color="#ff2244">
